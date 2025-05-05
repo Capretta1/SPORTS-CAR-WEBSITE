@@ -1,50 +1,114 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-:root {
-    --primary: #00c2de;
-}
+    :root {
+        --primary: #00c2de;
+    }
 
-body {
-    background: #000000;
-    font-family: "Roboto", sans-serif;
-}
+    body {
+        background: #000000;
+        font-family: "Roboto", sans-serif;
+    }
 
-/*Header*/
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 100px;
-    z-index: 1000;
-}
+    /*Header*/
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 100px;
+        z-index: 1000;
+    }
 
-header::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    transform: translateY(-50%);
-    left: 100px;
-    height: 5px;
-    width: 40%;
-    background: linear-gradient(90deg, var(--primary), transparent);
-}
+    header::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100px;
+        height: 5px;
+        width: 40%;
+        background: linear-gradient(90deg, var(--primary), transparent);
+    }
 
-.logo {
-    font-size: 30px;
-    color: #ffffff;
-}
+    .logo {
+        font-size: 30px;
+        color: #ffffff;
+    }
 
-.logo img {
-    max-width: 200px;
-    filter: invert(1);
-}
+    .logo img {
+        max-width: 200px;
+        filter: invert(1);
+    }
+
+    header .year{
+        font-family: 'Racing Sans One', cursive;
+        font-size: 1em;
+        color: white;
+        letter-spacing: 1px;
+        font-weight: 800;
+        margin-top: 40px;
+    }
+
+    header .menu{
+        position: relative;
+        height: 30px;
+        width: 30px;
+        background-size: 30px;
+        background: url("../images/menu-3-fill.png") center;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    header .menu.active{
+        position: relative;
+        height: 35px;
+        width: 35px;
+        background-size: 35px;
+        background: url("../images/close-line.png") center;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    /*Navigation*/
+    .nav{
+        z-index: 200;
+        position: absolute;
+        right: 100px;
+        top: 0;
+        width: 30%;
+        height: 5px;
+        border-bottom: 5px solid;
+        border-image: linear-gradient(90deg, transparent, var(--primary), var(--primary)) 30;
+        background : transparent;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        transform-origin: right;
+    }
+
+    .nav.active{
+        top: 100px;
+        width: 40%;
+        height: 100px;
+        border-top: 5px solid;
+        border-image: linear-gradient(90deg, transparent, var(--primary), var(--primary)) 30;
+        border-bottom: none;
+
+    }
+
+    .nav li{
+        opacity: 0;
+        visibility: hidden;
+    }
